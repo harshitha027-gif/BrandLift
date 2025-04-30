@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrandLift Tool - Generate Content</title>
+    <!-- Link to the SAME stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Optional: Add Favicon link if desired -->
+    <link rel="icon" href="assets/icons8-b-100.png" type="image/png">
+</head>
+<body>
+
+    <!-- ================================== -->
+    <!-- == TOOL PAGE CONTENT STARTS     == -->
+    <!-- ================================== -->
+    <div id="tool-section" class="tool-container"> <!-- Use tool-container styling -->
+
+        <a href="index.html" id="back-to-landing" class="btn btn-secondary btn-back">← Back to Home</a>
+
+        <h2>Choose Your Platform</h2>
+
+        <div id="platform-selection" class="platform-grid">
+            <!-- Platform boxes now contain icons AND names -->
+             <div class="platform-box" data-platform="WhatsApp"> <img width="56" height="56" src="https://img.icons8.com/color/96/whatsapp--v1.png" alt="WhatsApp Icon"/> <span class="platform-label">WhatsApp</span> </div>
+             <div class="platform-box" data-platform="Facebook"> <img width="56" height="56" src="https://img.icons8.com/color/96/facebook-new.png" alt="Facebook Icon"/> <span class="platform-label">Facebook</span> </div>
+             <div class="platform-box" data-platform="Twitter"> <img width="56" height="56" src="https://img.icons8.com/color/96/twitter--v1.png" alt="Twitter Icon"/> <span class="platform-label">Twitter</span> </div>
+             <div class="platform-box" data-platform="Instagram"> <img width="56" height="56" src="https://img.icons8.com/color/96/instagram-new--v1.png" alt="Instagram Icon"/> <span class="platform-label">Instagram</span> </div>
+             <div class="platform-box" data-platform="LinkedIn"> <img width="56" height="56" src="https://img.icons8.com/color/96/linkedin.png" alt="LinkedIn Icon"/> <span class="platform-label">LinkedIn</span> </div>
+             <div class="platform-box" data-platform="YouTube"> <img width="56" height="56" src="https://img.icons8.com/color/96/youtube-play.png" alt="YouTube Icon"/> <span class="platform-label">YouTube</span> </div>
+             <div class="platform-box" data-platform="Twitch"> <img width="56" height="56" src="https://img.icons8.com/color/96/twitch--v1.png" alt="Twitch Icon"/> <span class="platform-label">Twitch</span> </div>
+             <div class="platform-box" data-platform="Other"> <img width="56" height="56" src="https://img.icons8.com/color/96/plus--v1.png" alt="Other Icon"/> <span class="platform-label">Other</span> </div>
+        </div>
+
+        <!-- Container for the dynamic form area -->
+        <div id="input-form-container" class="input-form-area" style="display: none;"> <!-- Form hidden initially -->
+             <h3 id="form-title">Generate content for [Platform]</h3>
+
+            <form id="content-form">
+                <!-- ===== Platform Specific Fields Start ===== -->
+                <!-- Each div below contains fields for one platform and is hidden by default -->
+                <!-- Content of these divs remains the same as the previous version -->
+                <div id="form-fields-WhatsApp" class="platform-form-fields"> <div class="form-group"> <label for="whatsapp-update-type">Update Type:</label> <select id="whatsapp-update-type" name="whatsapp-update-type"> <option value="Status update">Status update</option> <option value="Direct message draft">Direct message draft</option> </select> </div> <div class="form-group"> <label for="whatsapp-key-message">Key Message/Idea:</label> <input type="text" id="whatsapp-key-message" name="whatsapp-key-message" placeholder="e.g., New product launch, quick tip" required> </div> <div class="form-group"> <label for="whatsapp-cta">Call to Action (Optional):</label> <input type="text" id="whatsapp-cta" name="whatsapp-cta" placeholder="e.g., Check link in bio, DM me"> </div> <div class="form-group common-tone-group"></div> </div>
+                <div id="form-fields-Facebook" class="platform-form-fields"> <div class="form-group"> <label for="facebook-topic">Post Topic/Idea:</label> <input type="text" id="facebook-topic" name="facebook-topic" placeholder="e.g., Behind the scenes, ask a question" required> </div> <div class="form-group"> <label for="facebook-goal">Goal of this Post:</label> <input type="text" id="facebook-goal" name="facebook-goal" placeholder="e.g., Increase engagement, drive traffic" required> </div> <div class="form-group common-tone-group"></div> <div class="form-group common-image-upload-group"></div> </div>
+                <div id="form-fields-Twitter" class="platform-form-fields"> <div class="form-group"> <label for="twitter-topic">Tweet Topic/Idea:</label> <input type="text" id="twitter-topic" name="twitter-topic" placeholder="e.g., Quick take on news, share a resource" required> </div> <div class="form-group"> <label for="twitter-hashtags">Include Hashtags?</label> <select id="twitter-hashtags" name="twitter-hashtags"> <option value="Suggest relevant hashtags">Suggest relevant hashtags</option> <option value="Use specific hashtags:">Use specific hashtags:</option> <option value="No hashtags needed">No hashtags needed</option> </select> <input type="text" id="twitter-specific-hashtags" name="twitter-specific-hashtags" placeholder="#your #tags (if specific selected)" style="display: none; margin-top: 5px;"> </div> <div class="form-group common-tone-group"></div> <div class="form-group common-image-upload-group"></div> </div>
+                <div id="form-fields-Instagram" class="platform-form-fields"> <div class="form-group"> <label for="instagram-topic">Image/Reel Description or Topic:</label> <input type="text" id="instagram-topic" name="instagram-topic" placeholder="Describe the visual or main idea" required> </div> <div class="form-group"> <label for="instagram-caption-goal">Caption Goal:</label> <input type="text" id="instagram-caption-goal" name="instagram-caption-goal" placeholder="e.g., Short & punchy, tell a story, ask a question" required> </div> <div class="form-group common-tone-group"></div> <div class="form-group common-image-upload-group"></div> </div>
+                <div id="form-fields-LinkedIn" class="platform-form-fields"> <div class="form-group"> <label for="linkedin-topic">Post Topic / Article Idea:</label> <input type="text" id="linkedin-topic" name="linkedin-topic" placeholder="e.g., Industry insight, company update, advice" required> </div> <div class="form-group"> <label for="linkedin-audience">Target Professionals:</label> <input type="text" id="linkedin-audience" name="linkedin-audience" placeholder="e.g., Marketing Managers, Software Engineers" required> </div> <div class="form-group common-tone-group"></div> <div class="form-group common-image-upload-group"></div> </div>
+                <div id="form-fields-YouTube" class="platform-form-fields"> <div class="form-group"> <label for="youtube-video-topic">Video Topic:</label> <input type="text" id="youtube-video-topic" name="youtube-video-topic" placeholder="Title or subject of the video" required> </div> <div class="form-group"> <label for="youtube-description-goal">Description Goal:</label> <select id="youtube-description-goal" name="youtube-description-goal"> <option value="Engaging summary">Engaging summary</option> <option value="Keyword-focused for search">Keyword-focused for search</option> <option value="Teaser to encourage watching">Teaser to encourage watching</option> </select> </div> <div class="form-group"> <label for="youtube-keywords">Keywords (Optional):</label> <input type="text" id="youtube-keywords" name="youtube-keywords" placeholder="Comma-separated, e.g., marketing, AI, content"> </div> <div class="form-group common-tone-group"></div> </div>
+                <div id="form-fields-Twitch" class="platform-form-fields"> <div class="form-group"> <label for="twitch-activity">Stream Activity / Title Idea:</label> <input type="text" id="twitch-activity" name="twitch-activity" placeholder="e.g., Playing Elden Ring, Just Chatting Q&A" required> </div> <div class="form-group"> <label for="twitch-announcement">Announcement Type:</label> <select id="twitch-announcement" name="twitch-announcement"> <option value="Going live message">Going live message</option> <option value="Stream schedule update">Stream schedule update</option> <option value="Highlighting a recent clip">Highlighting a recent clip</option> <option value="General channel update">General channel update</option> </select> </div> <div class="form-group"> <label for="twitch-cta">Call to Action (Optional):</label> <input type="text" id="twitch-cta" name="twitch-cta" placeholder="e.g., Follow me, join Discord"> </div> <div class="form-group common-tone-group"></div> </div>
+                <div id="form-fields-Other" class="platform-form-fields"> <div class="form-group"> <label for="other-topic">Content Topic:</label> <input type="text" id="other-topic" name="other-topic" placeholder="Main idea of the content" required> </div> <div class="form-group"> <label for="other-context">Platform Context:</label> <input type="text" id="other-context" name="other-context" placeholder="Where will this be posted? (e.g., Blog, Forum)" required> </div> <div class="form-group"> <label for="other-goal">Goal:</label> <input type="text" id="other-goal" name="other-goal" placeholder="Purpose of this content" required> </div> <div class="form-group common-tone-group"></div> </div>
+                <!-- ===== Platform Specific Fields End ===== -->
+
+                <button type="submit" class="btn btn-primary btn-generate">Generate Post</button>
+            </form> <!-- End Form -->
+
+        </div> <!-- End #input-form-container -->
+
+        <div id="output-area" style="display: none;"> <!-- Output hidden initially -->
+            <h3>Generated Content:</h3>
+            <!-- ADDED COPY BUTTON -->
+            <button id="copy-output-button" class="copy-button" title="Copy to Clipboard">Copy</button>
+            <div id="loading-indicator" style="display: none;">Generating...</div>
+            <pre id="gemini-output">
+                <!-- AI output will appear here -->
+            </pre>
+        </div>
+
+    </div> <!-- End of #tool-section / .tool-container -->
+
+    <!-- ================================== -->
+    <!-- == TOOL PAGE CONTENT ENDS       == -->
+    <!-- ================================== -->
+
+
+    <!-- Common Tone Selector HTML (Template for JS) -->
+    <template id="common-tone-template"> <label for="tone">Tone:</label> <select id="tone" name="tone" required> <option value="" disabled selected>Select Tone...</option> <option value="professional">Professional</option> <option value="casual">Casual</option> <option value="friendly">Friendly</option> <option value="informative">Informative</option> <option value="humorous">Humorous</option> <option value="urgent">Urgent</option> <option value="empathetic">Empathetic</option> <option value="playful">Playful</option> <option value="bold">Bold</option> <option value="technical">Technical</option> <option value="inspirational">Inspirational</option> </select> </template>
+    <!-- Common Image Upload HTML (Template for JS) -->
+    <template id="common-image-upload-template"> <label for="image-upload">Image Context (Optional):</label> <div class="file-input-wrapper"> <input type="file" id="image-upload" name="image-upload" class="file-input-hidden" accept="image/*"> <label for="image-upload" class="btn btn-secondary btn-file-upload">Choose Image</label> <span class="file-name-display">No file chosen</span> </div> <p class="input-hint">AI will consider the image context when generating text.</p> </template>
+
+    <!-- Link to the SAME JavaScript file -->
+    <script src="main.js"></script>
+
+</body>
+</html>
